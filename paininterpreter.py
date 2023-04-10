@@ -24,7 +24,7 @@ with paininducer as p:
                 grqcn+= 1
                 ended=True
             else:
-                if letter!="" and letter != "\n"
+                if letter!="" and letter != "\n":
                     raise SyntaxError("not a semicolon??")
     code+=chars[smcn]
     if grqcn>0:
