@@ -5,7 +5,7 @@ smcn=0
 grqcn=0
 ended=False
 code=""
-chars=string.ascii_letters+string.punctuation+string.digits
+chars=f" {string.ascii_letters+string.punctuation+string.digits};"
 whtspc=[0,""," ","\t","\n"]
 with paininducer as p:
     for count, line in enumerate(p):
@@ -23,11 +23,10 @@ with paininducer as p:
             elif letter == ";":
                 grqcn+= 1
                 ended=True
-            else:
-                if letter!="" and letter != "\n":
-                    raise SyntaxError("not a semicolon??")
+            elif letter not in ["", "\n"]:
+                raise SyntaxError("not a semicolon??")
     code+=chars[smcn]
     if grqcn>0:
         raise SyntaxError("End in greek???")
-            
+
 exec(code)
